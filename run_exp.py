@@ -48,7 +48,7 @@ from core import vtrace
 import pandas as pd
 import wandb
 
-from metaWriter import UCBBandit, DQNWriter
+from metaDQN.metaWriter import UCBBandit, DQNWriter
 from rtfm.tasks import RockPaperScissors
 import pickle
 
