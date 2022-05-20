@@ -1,33 +1,25 @@
 # Artificial Scientist
 
-This repository contains the code for our implementation of the Artificial Scientist [Artificial Scientist](https://drive.google.com/file/d/1XihYKOuWLIIR_P7FXeVUlnSKWN2TIfeC/view?usp=sharing)
+This repository contains the code for our implementation of the [Artificial Scientist](https://drive.google.com/file/d/1XihYKOuWLIIR_P7FXeVUlnSKWN2TIfeC/view?usp=sharing)
 
 
-- RTFM, a suite of procedurally generated environments that require jointly reasoning over a language goal, environment observations, and a document describing high-level environment dynamics.
+- Our work builds on the [RTFM environment and txt2pi model](https://arxiv.org/abs/1910.08210) proposed by Victor Zhong et al.
 
-- txt2pi, a model that beats existing state-of-the-art models on RTFM.
+## Meta Bandit Writer (UCB)
 
-## Citation
-If you use this work, please cite:
-
-```bib
-@inproceedings{
-  Zhong2020RTFM,
-  title={RTFM: Generalising to New Environment Dynamics via Reading},
-  author={Victor Zhong and Tim Rockt\"{a}schel and Edward Grefenstette},
-  booktitle={International Conference on Learning Representations},
-  year={2020},
-  url={https://arxiv.org/abs/1910.08210}
-}
-```
-
-## Setup
-
-First, set up RTFM as follows:
+To train the Meta UCB Bandit Writer:
 
 ```
-pip install -e .
+python run_exp.py --mode train_writer --difficulty character_level --num_eps 100
 ```
+
+The default task is set to a character-level lie correction task based on the RTFM Rock Paper Scissors Game, where only a single character in the wiki corresponding to an entity is false, resulting in a false description of entity relationships. To increase the difficulty of the task such that the writer has to correct an entire statement without any constraints on the ordering of tokens within that statement, run:
+
+```
+python run_exp.py --mode train_writer --difficulty statement_level --num_eps 10000000
+```
+
+The more difficult statement level task requires substantially more training episodes
 
 ## Play through
 
