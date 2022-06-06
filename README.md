@@ -7,7 +7,7 @@ This repository contains the code for our implementation of the [Artificial Scie
 
 ## Meta Bandit Writer (UCB)
 
-To train the Meta UCB Bandit Writer:
+The code for the Bandit Writer is found in metaBandit.py. To train the Meta UCB Bandit Writer:
 
 ```
 python run_exp.py --mode train_writer --difficulty character_level --num_eps 100
@@ -25,4 +25,4 @@ The more difficult statement level task requires substantially more training epi
 
 The 'Observant Scientist' is an improvement from the Meta Bandit approach, by encoding entire rollouts so as to use features from them to inform what can be deduced and written about the envroniment dynamics rather than random guessing as the meta bandit does. We train the observant scientist in a supervised manner, where the dataset is curated by collecting winning rollouts from the RTFM 'Groups Simple Stationary' game, which is more complex than Rock Paper Scissors but less so than Full RTFM. The dataset features are (rollout, NL task description) and the target is the two statements that can always be deduced about the environment dynamics from a winning episode. One of the statements is about the relationship between weapon type and monster type (which beats which), example: "Gleaming beats Fire.", and the other statement is about which monster belongs to which team, example: "wolf are order of the forest." We have an example dataset of 100k entries, which has been pickled and can be downloaded [here](https://drive.google.com/file/d/1EfaVA8q2FKZOxMn0NHcoD_LCrnagXpMi/view?usp=sharing).
 
-Once downloaded, the code implementation of the observant scientist which uses scheduled teacher forcing and hidden state forcing can be found in the observant.ipynb notebook.
+Once downloaded, the code implementation of the observant scientist which uses scheduled teacher forcing and hidden state forcing can be found in the supervisedScientist/observant.ipynb notebook.
