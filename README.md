@@ -1,6 +1,6 @@
 # Artificial Scientist
 
-This repository contains the code for our implementation of the [Artificial Scientist](https://drive.google.com/file/d/1XihYKOuWLIIR_P7FXeVUlnSKWN2TIfeC/view?usp=sharing)
+This repository contains the code for our implementation of the [Artificial Scientist](https://drive.google.com/file/d/1xKBUPdbc2X18hyAlSAgAS2tp2gV8NP7d/view?usp=sharing)
 
 
 - Our work builds on the [RTFM environment and txt2pi model](https://arxiv.org/abs/1910.08210) proposed by Victor Zhong et al.
